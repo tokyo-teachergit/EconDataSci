@@ -35,21 +35,27 @@ print(df["FEDFUNDS"])
 print("\nThis is the data type of the column with header name ""FEDFUNDS"".\n")
 print(type(df["FEDFUNDS"]))
 
-#print("\nNow let's change the datatype to prepare for our visualization.\n")
-#print("\nChanging obeject to datetime.\n")
-#df['Date_Time'] = pd.to_datetime(df['Date_Time'])
-
 print("\nNow let's change the datatype to prepare for our visualization.\n")
-print("\nDropping the last 3 strings.\n")
-df["DATE"] = df["DATE"].str[:-3] 
+print("\nChanging obeject to datetime.\n")
+#df['DATE'] = pd.to_datetime(df['DATE'])
+df['DATE'] = pd.to_datetime(df['DATE'], infer_datetime_format=True)
+print("\nYou can see the converted datatypes.\n")
+print(df.info())
+print("\nYou can see the converted dataframe.\n")
+print(df)
+print("\nGood. Then, we want to use only months and years in the dtaframe.\n")
+df['YEAR_MONTH'] = df['DATE'].dt.strftime('%Y年%m月')
+print(df.info())
+print(df)
 
 #print("\nNow let's change the datatype to prepare for our visualization.\n")
 #print("\nDropping rows with ""-"".\n")
 #df = df[df["FEDFUNDS"].str.contains("-") == False] #Check the column with header ""FEDFUNDS"" then drop the row with value ""-"". 
 
-df["FEDFUNDS"] = pd.to_numeric(df["FEDFUNDS"]) #Convert datatype from obeject to int or float. Note that this "to_numeric" command didn't work with "-" simbol.
-print("\nYou can see the converted datatypes.\n")
-print(df.info())
+#df["FEDFUNDS"] = pd.to_numeric(df["FEDFUNDS"]) #Convert datatype from obeject to int or float. Note that this "to_numeric" command didn't work with "-" simbol.
+#print("\nYou can see the converted datatypes.\n")
+#print(df.info())
+
 print("\nWell done, you finished the checking part.\n")
 
 #Styling
@@ -57,7 +63,8 @@ sns.set_style("whitegrid") #Preset styling template.
 #plt.grid(True) 
 plt.rcParams["font.family"] = "Noto Sans CJK JP" #Set a font after set_style to overwrite.
 
-plt.plot(df["DATE"], df["FEDFUNDS"], color ='orange',
+plt.plot(df["YEAR_MONTH"], df["FEDFUNDS"], color ='orange',
+#plt.plot(df["DATE"], df["FEDFUNDS"], color ='orange',
          marker ='o', markersize = 0.1, 
          label ='FEDFUNDS')
  
@@ -88,16 +95,16 @@ plt.annotate('local max', xy=(1950, 100),  xycoords='data',
 
 #Rendering section
 fig = plt.legend(loc="upper left", fontsize=10) #Location of the legend.
-fig = plt.xlabel("DATE") #Unit of X-Axis
+#fig = plt.xlabel("DATE") #Unit of X-Axis
 #fig = plt.ylabel("-") #Unit of Y-Axis
-fig = plt.xlim(0, 1000) #X-Axis (Min,Max)
-fig = plt.ylim(0, 10) #Y-Axis (Min,Max)
-fig = plt.xticks([0, 250, 500, 750, 1000])
-fig = plt.yticks([1, 2, 3, 4, 5, 6, 7, 8, 9])
+fig = plt.xlim(0, 900) #X-Axis (Min,Max)
+fig = plt.ylim(0, 15) #Y-Axis (Min,Max)
+fig = plt.xticks([0, 250, 500, 750])
+fig = plt.yticks([1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15])
 
-#fig = plt.xticks(rotation='vertical') #Rotate strings(=words) at Xticks in case they appear inappropriately.  
+#fig = plt.xticks(rotation='vertical') #Rotate strings(=words) at Xticks in case they appear inappropriately.
 plt.savefig('FFRate1954to2024.pdf')
-plt.savefig('FFRate1954to2024a.png', dpi=72)
+#plt.savefig('FFRate1954to2024a.png', dpi=72)
 plt.savefig('FFRate1954to2024b.png', dpi=300)
 plt.savefig('FFRate1954to2024c.png', dpi=600) #Save files in multiple resolution at once.
 plt.show()

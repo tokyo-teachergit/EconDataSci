@@ -8,8 +8,7 @@ cd xxx　#Move to the working directory / 目的のディレクトリへ移動
 cd C:\Users\muras\OneDrive\デスクトップ\EconDataSci\FFRate
 
 python xxx.py　#Run the file / ファイル実行
-python jgbcme_all.py
-python jgb10yAll.py
+python FFRate1954to2024.py
 
 Trouble Shooting / トラブルシューティング
 Japanese Font doesn’t appear / 日本語フォントが表示されない。
