@@ -95,8 +95,6 @@ sns.set_style("whitegrid") #Preset styling template.
 #plt.grid(True) 
 plt.rcParams["font.family"] = "Noto Sans CJK JP" #Set a font after set_style to overwrite.
 
-#plt.plot(df1["YEAR_MONTH"], df1["FXRUSD"], color ='orange',
-#plt.plot(df1["Series ID"], df1["FXRUSD"], color ='orange',
 plt.plot(DATERANGE.index, DATERANGE["FXRUSD"], color ='orange',
          marker ='o', markersize = 0.1, 
          label ='AUDUSD')

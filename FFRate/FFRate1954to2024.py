@@ -8,7 +8,7 @@ import matplotlib.dates as mdates
 plt.rcParams["font.family"] = "Noto Sans CJK JP"
 
 #Load a data file
-df = pd.read_csv("FFRate1954to2024.csv", #to read CSV file into df = DataFrame. Bank Of Japan data set is here. https://www.mof.go.jp/english/policy/jgbs/reference/interest_rate/index.htm
+df = pd.read_csv("FFRate1954to2024.csv", #to read CSV file into df = DataFrame.
 		sep=",", 
 		engine = "python", #to load Japanese CSV file.
 		encoding = "utf-8",
@@ -101,10 +101,10 @@ fig = plt.xlim(0, 900) #X-Axis (Min,Max)
 fig = plt.ylim(0, 15) #Y-Axis (Min,Max)
 fig = plt.xticks([0, 250, 500, 750])
 fig = plt.yticks([1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15])
-
 #fig = plt.xticks(rotation='vertical') #Rotate strings(=words) at Xticks in case they appear inappropriately.
-plt.savefig('FFRate1954to2024.pdf')
-#plt.savefig('FFRate1954to2024a.png', dpi=72)
+
+#Data Save Section
+plt.savefig('FFRate1954to2024a.pdf')
 plt.savefig('FFRate1954to2024b.png', dpi=300)
 plt.savefig('FFRate1954to2024c.png', dpi=600) #Save files in multiple resolution at once.
 plt.show()
