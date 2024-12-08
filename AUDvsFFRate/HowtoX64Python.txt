@@ -9,6 +9,8 @@ cd C:\Users\muras\OneDrive\デスクトップ\EconDataSci\AUDvsFFRate
 
 python xxx.py　#Run the file / ファイル実行
 python AUDvsFFRate2024.py
+python AUDvsFFRate1985-2010.py
+python AUDvsFFRate1990-2000.py
 
 Trouble Shooting / トラブルシューティング
 Japanese Font doesn’t appear / 日本語フォントが表示されない。

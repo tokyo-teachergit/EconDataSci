@@ -99,7 +99,7 @@ DFMerge = DFMerge.sort_index()#use sort_index after merging data.
 print(DFMerge)
 
 print("\nCut out the part of dataframes before rendering.\n")
-DATERANGE = DFMerge.loc['1985-01-01':'2024-11-01']
+DATERANGE = DFMerge.loc['1990-01-01':'2000-11-01']
 print("\nYou can see the DATERANGE.\n")
 print(DATERANGE.info())
 print("\nYou can see the DATERANGE dataframe.\n")
@@ -163,7 +163,7 @@ print("\nLet's use DATE as DatetimeIndex.\n")
 FEDFUNDSDF = FEDFUNDSDF.set_index("DATE")
 print(FEDFUNDSDF.info())
 print(FEDFUNDSDF)
-FEDFUNDSDF = FEDFUNDSDF.loc['1985-01-01':'2024-11-01']
+FEDFUNDSDF = FEDFUNDSDF.loc['1990-01-01':'2000-11-01']
 print(FEDFUNDSDF.info())
 print(FEDFUNDSDF)
 print("\nWell done, you finished the checking part.\n")
@@ -206,7 +206,7 @@ fig = plt.legend(loc="upper right", fontsize=10) #Location of the legend.
 
 
 #Data Save Section
-plt.savefig('AUDUSDvsFFR1985to2024a.pdf')
-plt.savefig('AUDUSDvsFFR1985to2024b.png', dpi=300)
-plt.savefig('AUDUSDvsFFR1985to2024c.png', dpi=600) #Save files in multiple resolution at once.
+plt.savefig('AUDvsFFRate1990-2000a.pdf')
+plt.savefig('AUDvsFFRate1990-2000b.png', dpi=300)
+plt.savefig('AUDvsFFRate1990-2000c.png', dpi=600) #Save files in multiple resolution at once.
 plt.show()
