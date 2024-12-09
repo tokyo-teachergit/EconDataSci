@@ -5,14 +5,11 @@ Open PowerShell
 C:\Users\muras\python\Scripts\Activate.ps1  #Activate your Python Environment/python仮想環境を起動
 
 cd xxx　#Move to the working directory / 目的のディレクトリへ移動
-cd C:\Users\muras\OneDrive\デスクトップ\EconDataSci\AUSUSD
+cd C:\Users\muras\OneDrive\デスクトップ\EconDataSci\AUDRate
 
 python xxx.py　#Run the file / ファイル実行
-python AUSUSD-1969-2009.py
-python AUSUSD-2010--xx.py
-python AUSUSD-1969--xx.py
 python CashRate-1990--xx.py
-
+python CashRatevsFFRate-1990--xx.py
 
 Trouble Shooting / トラブルシューティング
 Japanese Font doesn’t appear / 日本語フォントが表示されない。
