@@ -1,0 +1,21 @@
+Seaborn Intro
+
+20240825
+Pandas plotting to resume
+
+手順
+Open PowerShell
+
+C:\Users\muras\python\Scripts\Activate.ps1  #python仮想環境に入る
+
+cd xxx　#目的のディレクトリへ移動
+cd C:\Users\muras\OneDrive\デスクトップ\DataRates
+
+python xxx.py　#ファイルを実行
+python jgb10yAll.py
+
+
+トラブルシューティング
+日本語フォントが表示されない。
+
+C:\Users\muras\.matplotlib\fontlist-v330.json を消去する。matplotlibにフォントファイルを更新する。
