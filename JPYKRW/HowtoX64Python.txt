@@ -1,0 +1,15 @@
+How to use python in X86
+
+
+Open PowerShell
+C:\Users\muras\python\Scripts\Activate.ps1  #Activate your Python Environment/python仮想環境を起動
+
+cd xxx　#Move to the working directory / 目的のディレクトリへ移動
+cd C:\Users\muras\OneDrive\デスクトップ\EconDataSci\JPYKRW
+
+python xxx.py　#Run the file / ファイル実行
+python JPYvsKRW20001-202411.py
+
+Trouble Shooting / トラブルシューティング
+Japanese Font doesn’t appear / 日本語フォントが表示されない。
+C:\Users\muras\.matplotlib\fontlist-v330.json を消去する。matplotlibにフォントファイルを更新する。
