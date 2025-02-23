@@ -1,0 +1,19 @@
+How to use python in X86
+
+
+Open PowerShell
+C:\Users\muras\python\Scripts\Activate.ps1  #Activate your Python Environment/python仮想環境を起動
+
+cd xxx　#Move to the working directory / 目的のディレクトリへ移動
+cd C:\Users\muras\OneDrive\デスクトップ\EconDataSci\FFRateReal
+
+python xxx.py　#Run the file / ファイル実行
+python FFRateReal-2024--202502.py
+python CashRatevsFFRate-1990--xx.py
+
+
+Trouble Shooting / トラブルシューティング
+Japanese Font doesn’t appear / 日本語フォントが表示されない。
+Delete the file below / 以下のファイルを消去 
+C:\Users\muras\.matplotlib\fontlist-v330.json 
+Update the FONTFILE at matplotlib / matplotlibにフォントファイルを更新する。
