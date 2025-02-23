@@ -9,7 +9,6 @@ cd C:\Users\muras\OneDrive\デスクトップ\EconDataSci\FFRateReal
 
 python xxx.py　#Run the file / ファイル実行
 python FFRateReal-2024--202502.py
-python CashRatevsFFRate-1990--xx.py
 
 
 Trouble Shooting / トラブルシューティング
