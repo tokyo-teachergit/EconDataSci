@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt #%matplotlib inline
 import matplotlib.dates as mdates
 
 #Load a data file
-df1 = pd.read_csv("OfficialRate-2011-xx.csv", #to read CSV file into df1 = DataFrame.
+df1 = pd.read_csv("OfficialRate-2011-202502.csv", #to read CSV file into df1 = DataFrame.
 		sep=",", 
 		engine = "python", #to load Japanese CSV file.
 		encoding = "utf-8",
@@ -79,7 +79,7 @@ DFMerge = DFMerge.sort_index()#use sort_index after merging data.
 print(DFMerge)
 
 print("\nCut out the part of dataframes before rendering.\n")
-DATERANGE = DFMerge.loc['1990-09-01':'2024-11-01']
+DATERANGE = DFMerge.loc['1990-09-01':'2025-02-20']
 print("\nYou can see the DATERANGE.\n")
 print(DATERANGE.info())
 print("\nYou can see the DATERANGE dataframe.\n")
@@ -112,7 +112,7 @@ print("\nWell done, you finished the checking part.\n")
 
 
 #Load FEDFUNDS data file
-FEDFUNDSDF = pd.read_csv("FFRate1954to2024.csv", #to read CSV file into FEDFUNDSDF = DataFrame.
+FEDFUNDSDF = pd.read_csv("FFRate1954to202501.csv", #to read CSV file into FEDFUNDSDF = DataFrame.
 		sep=",", 
 		engine = "python", #to load Japanese CSV file.
 		encoding = "utf-8",
@@ -127,9 +127,9 @@ print(FEDFUNDSDF.info())
 print("\nThis is the rows and columns of your data.\n")
 print(FEDFUNDSDF)
 print("\nThis is your first column.\n")
-print(FEDFUNDSDF["DATE"])
+print(FEDFUNDSDF["observation_date"])
 print("\nThis is the data type of your first column.\n")
-print(type(FEDFUNDSDF["DATE"]))
+print(type(FEDFUNDSDF["observation_date"]))
 print("\nThis is the column with header name ""FEDFUNDS"".\n")
 print(FEDFUNDSDF["FEDFUNDS"])
 print("\nThis is the data type of the column with header name ""FEDFUNDS"".\n")
@@ -137,20 +137,20 @@ print(type(FEDFUNDSDF["FEDFUNDS"]))
 
 print("\nNow let's change the datatype to prepare for our visualization.\n")
 print("\nChanging obeject to datetime.\n")
-FEDFUNDSDF['DATE'] = pd.to_datetime(FEDFUNDSDF['DATE'], infer_datetime_format=True)
+FEDFUNDSDF["observation_date"] = pd.to_datetime(FEDFUNDSDF["observation_date"], infer_datetime_format=True)
 print("\nYou can see the converted datatypes.\n")
 print(FEDFUNDSDF.info())
 print("\nYou can see the converted dataframe.\n")
 print(FEDFUNDSDF)
 #print("\nGood. Then, we want to use only months and years in the dtaframe.\n")
-#FEDFUNDSDF['YEAR_MONTH'] = FEDFUNDSDF['DATE'].dt.strftime('%Y年%m月')
+#FEDFUNDSDF['YEAR_MONTH'] = FEDFUNDSDF["observation_date"].dt.strftime('%Y年%m月')
 #print(FEDFUNDSDF.info())
 #print(FEDFUNDSDF)
 print("\nLet's use DATE as DatetimeIndex.\n")
-FEDFUNDSDF = FEDFUNDSDF.set_index("DATE")
+FEDFUNDSDF = FEDFUNDSDF.set_index("observation_date")
 print(FEDFUNDSDF.info())
 print(FEDFUNDSDF)
-FEDFUNDSDF = FEDFUNDSDF.loc['1990-01-01':'2024-11-01']
+FEDFUNDSDF = FEDFUNDSDF.loc['1990-01-01':'2025-02-01']
 print(FEDFUNDSDF.info())
 print(FEDFUNDSDF)
 print("\nWell done, you finished the checking part.\n")
